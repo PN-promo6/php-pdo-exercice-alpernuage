@@ -73,8 +73,9 @@
                 <ul class="comments-list">
                   <?php
                   $postId = $onePost['id'];
-                  if (isset($comments[$postId])) {
-                    foreach ($comments[$postId] as $comment) {
+                  $comments = GetAllCommentsFromPostId($idPost);
+                  if (isset($comments)) {
+                    foreach ($comments as $comment) {
                   ?>
                       <li class="comment">
                         <a class="pull-left" href="#">
